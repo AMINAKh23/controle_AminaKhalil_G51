@@ -9,6 +9,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -19,8 +20,8 @@ public class ComputerGraphQLController {
     private ComputerService computerService;
 
     @QueryMapping
-    public List<ComputerDto> getAllComputers() {
-        return computerService.getAllComputers();
+    public List<ComputerDto> getComputersByProc(@RequestParam String proc) {
+        return computerService.getComputersByProc(proc);
     }
 
     @MutationMapping
@@ -28,8 +29,5 @@ public class ComputerGraphQLController {
         return computerService.saveComputer(computerDTO);
     }
 
-    @MutationMapping
-    public boolean deleteComputer(@Argument Long id) {
-        return computerService.deleteComputer(id);
-    }
+
 }

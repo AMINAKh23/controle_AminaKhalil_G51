@@ -1,4 +1,4 @@
-# input ComputerRequest
+
 input ComputerRequest {
     proc: String
     ram: String

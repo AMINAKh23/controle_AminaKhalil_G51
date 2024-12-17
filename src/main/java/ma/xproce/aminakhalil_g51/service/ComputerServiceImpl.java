@@ -27,19 +27,12 @@ public class ComputerServiceImpl implements ComputerService {
         return computerMapper.fromComputerToComputerDto(savedComputer);
     }
 
-    @Override
-    public boolean deleteComputer(Long id) {
-        if (computerRepository.existsById(id)) {
-            computerRepository.deleteById(id);
-            return true;
-        }
-        return false;
-    }
 
     @Override
-    public List<ComputerDto> getAllComputers() {
-        return computerRepository.findAll().stream()
+    public List<ComputerDto> getComputersByProc(String proc) {
+        return computerRepository.findByProc(proc).stream()
                 .map(computerMapper::fromComputerToComputerDto)
                 .collect(Collectors.toList());
     }
+
 }

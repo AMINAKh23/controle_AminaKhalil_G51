@@ -1,4 +1,3 @@
-# type Query
 type Query {
     getComputerByProc(proc: String): [Computer]
     getComputerByPrice(price: Float): [Computer]

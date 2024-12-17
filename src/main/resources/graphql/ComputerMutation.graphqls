@@ -1,4 +1,3 @@
-# type Mutation
 type Mutation {
     saveComputer(computer: ComputerRequest): Computer
     deleteComputer(id: ID): Boolean
