@@ -1,0 +1,6 @@
+# type Query
+type Query {
+    getComputerByProc(proc: String): [Computer]
+    getComputerByPrice(price: Float): [Computer]
+    getComputerByProcAndPrice(proc: String, price: Float): [Computer]
+}
